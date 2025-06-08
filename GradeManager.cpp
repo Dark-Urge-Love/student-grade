@@ -31,20 +31,20 @@ Student* GradeManager::findStudent(const string& id) {
 // 显示所有学生（按学号排序）
 void GradeManager::displayAll() const {
     if (students.empty()) {
-        std::cout << "没有学生记录！" << std::endl;
+        cout << "没有学生记录！" << endl;
         return;
     }
 
     // 创建副本进行排序（不修改原顺序）
-    std::vector<Student> sortedStudents = students;
-    std::sort(sortedStudents.begin(), sortedStudents.end(),
+    vector<Student> sortedStudents = students;
+    sort(sortedStudents.begin(), sortedStudents.end(),
         [](const Student& a, const Student& b) {
             return a.getId() < b.getId();
         });
 
     // 打印表头
-    std::cout << "\n学号        姓名          平时成绩  考试成绩  总评成绩\n";
-    std::cout << "------------------------------------------------------\n";
+    cout << "\n学号        姓名          平时成绩  考试成绩  总评成绩\n";
+    cout << "------------------------------------------------------\n";
 
     // 打印学生信息
     for (const auto& student : sortedStudents) {
