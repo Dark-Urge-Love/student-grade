@@ -4,14 +4,13 @@
 using namespace std;
 
 // 构造函数
-Student::Student(const std::string& id, const std::string& name,
+Student::Student(const string id, const string name,
     double dailyScore, double examScore)
     : id(id), name(name), dailyScore(dailyScore), examScore(examScore) {
     // 计算总评成绩（平时40% + 考试60%）
     finalScore = dailyScore * 0.4 + examScore * 0.6;
 }
 
-// Getter方法实现
 string Student::getId() const { return id; }
 string Student::getName() const { return name; }
 double Student::getDailyScore() const { return dailyScore; }

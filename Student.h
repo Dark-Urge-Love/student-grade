@@ -13,10 +13,9 @@ private:
     double finalScore;     // 总评成绩
 
 public:
-    Student(const std::string& id, const std::string& name,
+    Student(const string id, const string name,
         double dailyScore, double examScore);
 
-    // Getter方法
     string getId() const;
     string getName() const;
     double getDailyScore() const;

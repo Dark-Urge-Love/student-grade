@@ -1,7 +1,6 @@
 #pragma once
 #ifndef GRADE_MANAGER_H
 #define GRADE_MANAGER_H
-
 #include "Student.h"
 #include <vector>
 #include <map>
@@ -12,7 +11,7 @@ private:
     vector<Student> students;  // 存储所有学生
 
     // 按学号查找学生索引
-    int findStudentIndex(const string& id) const;
+    int findStudentIndex(string id) const;
 
 public:
     // 添加学生

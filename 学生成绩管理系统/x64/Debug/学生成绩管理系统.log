@@ -1,7 +1,3 @@
 ﻿  GradeManager.cpp
-  main.cpp
-  Student.cpp
-  Student.h
-  正在生成代码...
 学生成绩管理系统\x64\Debug\Student.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
   学生成绩管理系统.vcxproj -> D:\Users\LiaoYiLin\source\repos\学生成绩管理系统\x64\Debug\学生成绩管理系统.exe
