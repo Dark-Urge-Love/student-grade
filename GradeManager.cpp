@@ -5,7 +5,7 @@
 using namespace std;
 
 // 添加学生
-void GradeManager::addStudent(const Student& student) {
+void GradeManager::addStudent(Student student) {
     students.push_back(student);
 }
 
@@ -20,7 +20,7 @@ int GradeManager::findStudentIndex(string id) const {
 }
 
 // 查询学生
-Student* GradeManager::findStudent(const string& id) {//指针类型
+Student* GradeManager::findStudent(string id) {//指针类型
     int index = findStudentIndex(id);
     if (index != -1) {
         return &students[index];
@@ -40,7 +40,6 @@ void GradeManager::displayAll() const {
         return;
     }
 
-    // 创建副本进行升序排序（不修改原顺序）
     vector<Student> sortedStudents = students;
     sort(sortedStudents.begin(), sortedStudents.end(), compareById);//sort排序
 
@@ -49,14 +48,14 @@ void GradeManager::displayAll() const {
     cout << "------------------------------------------------------\n";
 
     // 打印学生信息
-    for (auto student : sortedStudents) {
+    for (Student student : sortedStudents) {
         student.display();
     }
     cout << endl;
 }
 
 // 删除学生
-bool GradeManager::removeStudent(const string& id) {
+bool GradeManager::removeStudent(string id) {
     int index = findStudentIndex(id);
     if (index != -1) {
         students.erase(students.begin() + index);
@@ -66,7 +65,7 @@ bool GradeManager::removeStudent(const string& id) {
 }
 
 // 修改学生信息
-bool GradeManager::updateStudent(const string& id) {
+bool GradeManager::updateStudent(string id) {
     Student* student = findStudent(id);
     if (student) {
         double daily, exam;
@@ -97,24 +96,24 @@ void GradeManager::analyzeScores() const {
     double total = 0;
 
     // 统计各分数段人数
-    for (const auto& student : students) {
+    for (Student student : students) {
         double score = student.getFinalScore();
         total += score;
 
         if (score >= 90) {
-            scoreGroups[4].second++;  // 优秀
+            scoreGroups[4].second++;  //优秀
         }
         else if (score >= 80) {
-            scoreGroups[3].second++;  // 良好
+            scoreGroups[3].second++;  //良好
         }
         else if (score >= 70) {
-            scoreGroups[2].second++;  // 中等
+            scoreGroups[2].second++;  //中等
         }
         else if (score >= 60) {
-            scoreGroups[1].second++;  // 及格
+            scoreGroups[1].second++;  //及格
         }
         else {
-            scoreGroups[0].second++;  // 不及格
+            scoreGroups[0].second++;  //不及格
         }
     }
     double average = total / students.size();

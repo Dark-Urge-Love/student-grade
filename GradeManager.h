@@ -15,19 +15,19 @@ private:
 
 public:
     // 添加学生
-    void addStudent(const Student& student);
+    void addStudent(Student student);
 
     // 查询学生
-    Student* findStudent(const string& id);
+    Student* findStudent(string id);
 
     // 显示所有学生（按学号排序）
     void displayAll() const;
 
     // 删除学生
-    bool removeStudent(const string& id);
+    bool removeStudent(string id);
 
     // 修改学生信息
-    bool updateStudent(const string& id);
+    bool updateStudent(string id);
 
     // 成绩统计
     void analyzeScores() const;
